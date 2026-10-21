@@ -1,20 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
-:root {
-    --bg: #0c0d12;
-    --surface: #14151d;
-    --surface-light: #1b1c26;
-    --border: #292a36;
-    --text: #f2f1f8;
-    --muted: #9394a7;
-    --accent: #b69cff;
-    --accent-dark: #8c6bde;
-    --success: #78dfb1;
-    --font-main: 'Space Grotesk', sans-serif;
-    --font-mono: 'DM Mono', monospace;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -23,303 +7,41 @@
 
 body {
     min-height: 100vh;
-    background:
-        radial-gradient(ellipse at 50% 0%, #242039 0%, transparent 48%),
-        var(--bg);
-    color: var(--text);
-    font-family: var(--font-main);
-    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #121212;
+    font-family: Arial, sans-serif;
 }
 
-button,
 input {
-    font: inherit;
+    padding: 12px 16px;
+    width: 250px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #222;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #a78bfa;
 }
 
 button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #a78bfa;
+    color: #121212;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.app {
-    width: min(100% - 40px, 760px);
-    margin: 0 auto;
-}
-
-/* Header */
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.logo-icon {
-    display: grid;
-    place-items: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
-    background: var(--accent);
-    color: var(--bg);
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-.accent {
-    color: var(--accent);
-}
-
-.version,
-.eyebrow,
-.status-dot,
-form label,
-.footer {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 1.2px;
-}
-
-.version {
-    color: var(--muted);
-}
-
-/* Hero */
-
-.hero {
-    padding: 76px 0 48px;
-}
-
-.eyebrow {
-    color: var(--accent);
-    font-weight: 500;
-}
-
-.hero h1 {
-    margin-top: 16px;
-    font-size: clamp(3rem, 8vw, 5rem);
-    line-height: 1.02;
-    letter-spacing: -3px;
-    font-weight: 600;
-}
-
-.subtitle {
-    max-width: 490px;
-    margin-top: 22px;
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-/* Analyzer card */
-
-.analyzer {
-    padding: 28px;
-    background: rgba(20, 21, 29, 0.94);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
-}
-
-.section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 28px;
-}
-
-.section-heading h2 {
-    margin-top: 5px;
-    font-size: 1.5rem;
-    letter-spacing: -0.7px;
-}
-
-.status-dot {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--success);
-}
-
-.status-dot::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--success);
-    box-shadow: 0 0 10px rgba(120, 223, 177, 0.45);
-}
-
-form label {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--muted);
-}
-
-form input {
-    width: 100%;
-    min-height: 54px;
-    padding: 0 16px;
-    color: var(--text);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-form input::placeholder {
-    color: #626375;
-}
-
-form input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(182, 156, 255, 0.12);
-}
-
-form button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 52px;
-    margin-top: 14px;
-    padding: 0 18px;
-    background: var(--accent);
-    color: #171120;
-    border: 0;
-    border-radius: 10px;
-    font-weight: 700;
-    transition: background 0.2s, transform 0.2s;
-}
-
-form button:hover {
-    background: #c8b5ff;
-    transform: translateY(-1px);
-}
-
-form button:focus-visible,
-.example-chip:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-}
-
-/* Results: populated by JavaScript */
-
-.results {
-    margin-top: 20px;
-}
-
-.result-placeholder {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px;
-    color: var(--muted);
-    background: var(--surface-light);
-    border: 1px dashed #383747;
-    border-radius: 10px;
-    font-size: 0.9rem;
-}
-
-.placeholder-icon {
-    color: var(--accent);
-    font-size: 1.4rem;
-}
-
-/* Example chips */
-
-.examples {
-    padding: 32px 0 50px;
-}
-
-.example-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 14px;
-}
-
-.example-chip {
-    padding: 8px 14px;
-    color: #c8c7d7;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    transition: border-color 0.2s, color 0.2s;
-}
-
-.example-chip:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-/* Footer */
-
-.footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 20px 0 28px;
-    color: #737487;
-    border-top: 1px solid var(--border);
-    font-size: 0.65rem;
-}
-
-/* Responsive layout */
-
-@media (max-width: 520px) {
-    .app {
-        width: min(100% - 28px, 760px);
-    }
-
-    .header {
-        padding: 20px 0;
-    }
-
-    .version {
-        font-size: 0.55rem;
-        letter-spacing: 0.5px;
-    }
-
-    .hero {
-        padding: 54px 0 34px;
-    }
-
-    .hero h1 {
-        letter-spacing: -2px;
-    }
-
-    .subtitle {
-        font-size: 0.92rem;
-    }
-
-    .analyzer {
-        padding: 20px;
-        border-radius: 16px;
-    }
-
-    .section-heading h2 {
-        font-size: 1.3rem;
-    }
-
-    .footer {
-        flex-direction: column;
-    }
+button:hover {
+    background-color: #c4b5fd;
 }
