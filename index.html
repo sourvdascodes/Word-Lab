@@ -4,14 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Lab | Word Analyzer</title>
     <link rel="stylesheet" href="style.css">
-    <title>Simple Input</title>
+    
 </head>
 <body>
+    <main class="app">
+        <header class="header">
+            <a class="logo" href="#" aria-label="Word Lab home">
+                <span class="logo-icon">W</span>
+                <span>Word<span class="accent">Lab</span></span>
+            </a>
+            <span class="version">STRING TOOLKIT · 01</span>
+        </header>
 
-    <input type="text" id="user-input" placeholder="Enter something">
+        <section class="hero">
+            <p class="eyebrow">YOUR WORDPLAY WORKSPACE</p>
+            <h1>Words have<br>another <span class="accent">side.</span></h1>
+            <p class="subtitle">
+                Reverse a word, discover palindromes, and explore
+                the little details hidden inside every string.
+            </p>
+        </section>
 
-    <button type="button" id="my-button">Click Me</button>
-<script src="script.js"></script>
+        <section class="analyzer" aria-labelledby="analyzer-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">STRING ANALYZER</p>
+                    <h2 id="analyzer-title">Enter a word</h2>
+                </div>
+                <span class="status-dot">READY</span>
+            </div>
+
+            <form id="word-form">
+                <label for="word-input">YOUR INPUT</label>
+                <input
+                    type="text"
+                    id="word-input"
+                    placeholder="Try something like level..."
+                    autocomplete="off"
+                    maxlength="100"
+                    required
+                >
+                <button type="button" id="analyze-btn">
+                    Analyze word <span aria-hidden="true">→</span>
+                </button>
+            </form>
+
+            <div class="results" id="results" aria-live="polite">
+                <p class="result-placeholder">
+                    <span class="placeholder-icon">↗</span>
+                    Your results will appear here.
+                </p>
+            </div>
+        </section>
+
+        <section class="examples">
+            <p class="eyebrow">NEED AN IDEA?</p>
+            <div class="example-list">
+                <button type="button" class="example-chip" data-word="level">
+                    level
+                </button>
+                <button type="button" class="example-chip" data-word="JavaScript">
+                    JavaScript
+                </button>
+                <button type="button" class="example-chip" data-word="madam">
+                    madam
+                </button>
+                <button type="button" class="example-chip" data-word="hello">
+                    hello
+                </button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>WORD LAB</span>
+            <span>BUILT WITH HTML · CSS · JAVASCRIPT</span>
+        </footer>
+    </main>
+    <script src="script.js" defer></script>
 </body>
 </html>
